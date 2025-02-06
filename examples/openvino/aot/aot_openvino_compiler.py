@@ -78,7 +78,7 @@ def quantize_model(model: torch.fx.GraphModule, calibration_dataset: torch.utils
         annotated_model(data[0])
 
     print("PTQ: Convert the quantized model...")
-    quantized_model = convert_pt2e(annotated_model)
+    quantized_model = convert_pt2e(annotated_model, fold_quantize=False)
     return quantized_model
 
 
